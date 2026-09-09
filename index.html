@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Portfolio</title>
   <style>
+    /* Dark Slate & Teal Color Palette */
     :root {
-      --bg-color: #f8f9fa;
-      --card-bg: #ffffff;
-      --accent-blue: #2563eb;
-      --accent-hover: #1d4ed8;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-color: #e5e7eb;
+      --bg-color: #0f172a;        /* Deep slate background */
+      --card-bg: #1e293b;       /* Dark slate card container */
+      --accent-color: #0d9488;   /* Vibrant teal accent */
+      --accent-hover: #14b8a6;   /* Bright teal hover state */
+      --text-main: #f8fafc;      /* Crisp white heading text */
+      --text-muted: #94a3b8;     /* Soft slate body text */
+      --border-color: #334155;   /* Subtle divider border */
+      --tag-bg: #334155;         /* Badge background */
+      --tag-text: #cbd5e1;       /* Badge text */
     }
 
     * {
@@ -41,7 +44,7 @@
 
     /* Navigation Bar */
     nav {
-      background-color: #ffffff;
+      background-color: #0f172a;
       border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
@@ -75,10 +78,10 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent-blue);
+      color: var(--accent-hover);
     }
 
-    /* Asymmetric Hero Header */
+    /* Hero Banner Header */
     .hero {
       padding: 70px 0 50px;
     }
@@ -92,7 +95,7 @@
       grid-template-columns: 200px 1fr;
       gap: 40px;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     }
 
     .profile-img {
@@ -100,6 +103,7 @@
       height: 180px;
       border-radius: 20px;
       object-fit: cover;
+      border: 2px solid var(--accent-color);
     }
 
     .hero-content h1 {
@@ -110,7 +114,7 @@
 
     .hero-subtitle {
       font-size: 1.25rem;
-      color: var(--accent-blue);
+      color: var(--accent-hover);
       font-weight: 600;
       margin-bottom: 12px;
     }
@@ -128,7 +132,7 @@
     }
 
     .btn-primary {
-      background-color: var(--accent-blue);
+      background-color: var(--accent-color);
       color: #ffffff;
       padding: 10px 20px;
       border-radius: 8px;
@@ -142,16 +146,17 @@
 
     .btn-outline {
       border: 1px solid var(--border-color);
-      background: #ffffff;
+      background: transparent;
       color: var(--text-main);
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: 600;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, border-color 0.2s;
     }
 
     .btn-outline:hover {
-      background-color: #f3f4f6;
+      background-color: var(--tag-bg);
+      border-color: var(--text-muted);
     }
 
     /* Section Headings */
@@ -165,6 +170,7 @@
     .section-header h2 {
       font-size: 1.6rem;
       font-weight: 700;
+      color: var(--text-main);
     }
 
     .section-header .line {
@@ -173,7 +179,7 @@
       background-color: var(--border-color);
     }
 
-    /* Horizontal Card Layout for Projects */
+    /* Project Cards Layout */
     .projects-list {
       display: flex;
       flex-direction: column;
@@ -187,12 +193,12 @@
       display: grid;
       grid-template-columns: 240px 1fr;
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .project-item:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      border-color: var(--accent-color);
     }
 
     .project-img {
@@ -200,7 +206,7 @@
       height: 100%;
       min-height: 160px;
       object-fit: cover;
-      background-color: #e5e7eb;
+      background-color: #334155;
     }
 
     .project-info {
@@ -213,6 +219,7 @@
     .project-info h3 {
       font-size: 1.2rem;
       margin-bottom: 8px;
+      color: var(--text-main);
     }
 
     .project-info p {
@@ -222,12 +229,12 @@
     }
 
     .link-btn {
-      color: var(--accent-blue);
+      color: var(--accent-hover);
       font-weight: 600;
       font-size: 0.9rem;
     }
 
-    /* Clean Tag Layout for Skills */
+    /* Skills Badges */
     .skills-category {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -249,8 +256,8 @@
     }
 
     .tag {
-      background-color: #f3f4f6;
-      color: var(--text-main);
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.88rem;
