@@ -4,65 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Portfolio</title>
+  
+  <!-- Font Imports from Google Fonts -->
+  <!-- 'Outfit' is used for clean body text; 'Space Grotesk' is used for modern headings -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <style>
+    /* ==========================================================================
+       1. GLOBAL THEME VARIABLES
+       Defines the color scheme and theme variables used across the entire site.
+       Updating a color here changes it everywhere automatically.
+       ========================================================================== */
     :root {
-      --bg-color: #ffffff;
-      --card-bg: #ffffff;
-      --accent-color: #2563EB;
-      --accent-hover: #1d4ed8;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-color: #e5e7eb;
-      --tag-bg: #f3f4f6;
-      --tag-text: #1f2937;
+      --bg-color: #ffffff;      /* Main background color of the webpage */
+      --card-bg: #ffffff;        /* Background color for cards, buttons, and sections */
+      --accent-color: #2563EB;   /* Primary accent color (Blue) for highlights, borders, & links */
+      --accent-hover: #1d4ed8;   /* Darker blue tint when hovering over buttons/links */
+      --text-main: #111827;      /* Primary text color for titles and bold text */
+      --text-muted: #4b5563;     /* Muted gray text color for body paragraphs and subtitles */
+      --border-color: #e5e7eb;   /* Light gray border line color around cards and dividers */
+      --tag-bg: #f3f4f6;        /* Light gray fill color for skill badge tags */
+      --tag-text: #1f2937;      /* Text color inside skill badge tags */
     }
 
+    /* ==========================================================================
+       2. BASE RESET & TYPOGRAPHY
+       Resets browser defaults (margins/padding) and sets general typography.
+       ========================================================================== */
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Outfit', sans-serif;
+      box-sizing: border-box; /* Includes padding and borders in total element width/height */
+      margin: 0;               /* Removes default browser outer margins */
+      padding: 0;              /* Removes default browser inner padding */
+      font-family: 'Outfit', sans-serif; /* Sets default font for all body text */
     }
 
+    /* Sets heading-specific font family for prominent section headers and titles */
     h1, h2, h3, .logo {
       font-family: 'Space Grotesk', sans-serif;
     }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
+      background-color: var(--bg-color); /* Applies background color from :root */
+      color: var(--text-main);           /* Applies default text color */
+      line-height: 1.6;                  /* Adds vertical spacing between text lines for readability */
     }
 
     a {
-      text-decoration: none;
-      color: inherit;
+      text-decoration: none; /* Removes default underline from hyperlinks */
+      color: inherit;        /* Inherits text color from parent element */
     }
 
-    /* Wider container with compact side padding */
+    /* ==========================================================================
+       3. PAGE CONTAINER
+       Controls maximum page width and centers content horizontally.
+       ========================================================================== */
     .container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 16px;
+      max-width: 1150px; /* Limits maximum site width on large desktop monitors */
+      margin: 0 auto;    /* Centers content horizontally on screen */
+      padding: 0 16px;   /* Prevents content from touching left/right screen edges on mobile */
     }
 
-    /* Navigation Bar */
+    /* ==========================================================================
+       4. NAVIGATION BAR
+       Sticky header bar at the top of the browser window.
+       ========================================================================== */
     nav {
       background-color: #ffffff;
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
+      border-bottom: 1px solid var(--border-color); /* Bottom separator line */
+      position: sticky; /* Keeps top navigation fixed while scrolling down */
       top: 0;
-      z-index: 100;
+      z-index: 100;     /* Ensures navigation remains on top of other elements */
     }
 
     .nav-container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
+      justify-content: space-between; /* Pushes brand logo to left and links to right */
+      align-items: center;            /* Centers logo and links vertically */
+      height: 70px;                   /* Navigation bar height */
     }
 
     .logo {
@@ -73,45 +93,48 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      list-style: none;
+      gap: 24px;          /* Horizontally spaces navigation links */
+      list-style: none;   /* Removes bullet points from navigation list */
     }
 
     .nav-links a {
       color: var(--text-muted);
       font-weight: 500;
       font-size: 1.05rem;
-      transition: color 0.2s;
+      transition: color 0.2s; /* Smooth color transition effect on hover */
     }
 
     .nav-links a:hover {
-      color: var(--accent-color);
+      color: var(--accent-color); /* Highlight color on hover */
     }
 
-    /* Hero Banner Header with reduced outer margins */
+    /* ==========================================================================
+       5. HERO / PROFILE SECTION
+       Top hero card displaying headshot photo, bio, and call-to-action buttons.
+       ========================================================================== */
     .hero {
-      padding: 30px 0 20px;
+      padding: 30px 0 20px; /* Outer top and bottom margins for hero wrapper */
     }
 
     .hero-card {
       background: var(--card-bg);
-      border-radius: 18px;
-      padding: 36px;
+      border-radius: 18px;                          /* Rounded card corners */
+      padding: 36px;                                /* Inner spacing inside card */
       border: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 36px;
-      align-items: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      grid-template-columns: 280px 1fr;             /* Left column (280px for photo), Right column (flexible text) */
+      gap: 36px;                                    /* Gap between photo and bio text */
+      align-items: center;                          /* Vertically aligns photo with bio text */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);   /* Soft subtle drop shadow */
     }
 
-    /* Significantly larger profile image */
+    /* Controls profile picture size, border accent, and rounded corners */
     .profile-img {
       width: 270px;
       height: 270px;
       border-radius: 20px;
-      object-fit: cover;
-      border: 3px solid var(--accent-color);
+      object-fit: cover;                             /* Prevents photo distortion or stretching */
+      border: 3px solid var(--accent-color);         /* Colored outline accent border */
     }
 
     .hero-content h1 {
@@ -134,12 +157,14 @@
       margin-bottom: 28px;
     }
 
+    /* Action button container */
     .hero-actions {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: 14px;          /* Spacing between buttons */
+      flex-wrap: wrap;    /* Allows buttons to wrap to next line on small screens */
     }
 
+    /* Solid Primary Button Style */
     .btn-primary {
       background-color: var(--accent-color);
       color: #ffffff;
@@ -154,6 +179,7 @@
       background-color: var(--accent-hover);
     }
 
+    /* Outline Secondary Button Style */
     .btn-outline {
       border: 1px solid var(--border-color);
       background: #ffffff;
@@ -169,9 +195,12 @@
       background-color: var(--tag-bg);
     }
 
-    /* Section Headings with reduced outer margins */
+    /* ==========================================================================
+       6. SECTION HEADINGS WITH DIVIDER LINES
+       Reusable header style for 'Projects' and 'Skills & Tools' sections.
+       ========================================================================== */
     .section-header {
-      margin: 40px 0 24px;
+      margin: 40px 0 24px; /* Space above and below section headings */
       display: flex;
       align-items: center;
       gap: 16px;
@@ -183,17 +212,21 @@
       color: var(--text-main);
     }
 
+    /* Horizontal divider line stretching across remaining width */
     .section-header .line {
       flex-grow: 1;
       height: 1px;
       background-color: var(--border-color);
     }
 
-    /* Project Cards Layout */
+    /* ==========================================================================
+       7. PROJECTS SECTION
+       Card layout for displaying engineering projects with images and details.
+       ========================================================================== */
     .projects-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 20px;            /* Vertical spacing between project cards */
     }
 
     .project-item {
@@ -201,11 +234,12 @@
       border-radius: 14px;
       border: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 280px 1fr;
-      overflow: hidden;
+      grid-template-columns: 280px 1fr; /* 280px preview image on left, text on right */
+      overflow: hidden;                 /* Keeps image clipped inside rounded border */
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
+    /* Hover effect: lifts card slightly and increases shadow */
     .project-item:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
@@ -215,7 +249,7 @@
       width: 100%;
       height: 100%;
       min-height: 180px;
-      object-fit: cover;
+      object-fit: cover;     /* Crops image cleanly to fit left column area */
       background-color: #e5e7eb;
     }
 
@@ -248,13 +282,16 @@
       color: var(--accent-hover);
     }
 
-    /* Skills Badges */
+    /* ==========================================================================
+       8. SKILLS SECTION
+       Category boxes containing pill-style skill badges.
+       ========================================================================== */
     .skills-category {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 14px;
       padding: 28px;
-      margin-bottom: 18px;
+      margin-bottom: 18px;   /* Vertical gap between skill category cards */
     }
 
     .skills-category h3 {
@@ -265,20 +302,24 @@
 
     .tag-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-wrap: wrap;       /* Allows skill badges to wrap naturally across rows */
+      gap: 10px;            /* Spacing between individual skill tags */
     }
 
+    /* Individual pill badge for skills */
     .tag {
       background-color: var(--tag-bg);
       color: var(--tag-text);
       padding: 8px 16px;
-      border-radius: 20px;
+      border-radius: 20px;  /* Creates rounded pill shape */
       font-size: 0.95rem;
       font-weight: 500;
     }
 
-    /* Footer */
+    /* ==========================================================================
+       9. FOOTER
+       Copyright and contact line at the bottom of the page.
+       ========================================================================== */
     footer {
       text-align: center;
       padding: 36px 0;
@@ -288,30 +329,38 @@
       margin-top: 48px;
     }
 
-    /* Mobile Responsive */
+    /* ==========================================================================
+       10. MOBILE RESPONSIVENESS
+       Adjusts multi-column grid layouts into single-column stacks on mobile screens.
+       ========================================================================== */
     @media (max-width: 768px) {
+      /* Stacks profile photo on top of bio text on smaller screens */
       .hero-card {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 28px 20px;
       }
       .profile-img {
-        margin: 0 auto;
+        margin: 0 auto;     /* Centers picture on mobile */
         width: 220px;
         height: 220px;
       }
+      /* Stacks project images on top of project descriptions on mobile */
       .project-item {
         grid-template-columns: 1fr;
       }
       .hero-actions {
-        justify-content: center;
+        justify-content: center; /* Centers action buttons on mobile screens */
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ==========================================================================
+       HTML HEADER / NAVIGATION
+       Displays site logo and menu anchor links.
+       ========================================================================== -->
   <nav>
     <div class="container nav-container">
       <a href="#" class="logo">Ryman Mahnke</a>
@@ -323,15 +372,23 @@
     </div>
   </nav>
 
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       Wraps main sections in a single structured container.
+       ========================================================================== -->
   <main class="container">
-    <!-- Hero Header Card -->
+
+    <!-- HERO SECTION: Displays profile headshot photo, introduction, bio, and key action links -->
     <section class="hero">
       <div class="hero-card">
+        <!-- Profile Picture: Pointing to Ryman Headshot.png uploaded in root directory -->
         <img src="Ryman Headshot.png" alt="Ryman Mahnke Photo" class="profile-img">
+        
         <div class="hero-content">
           <h1>Ryman Mahnke</h1>
           <p class="hero-subtitle">Mechanical Engineering Student @ UCLA</p>
           <p class="hero-bio">Passionate student interested in Automotive/Electric Vehicle Development, Renewable Energy Grid Infrastructure, and Water Resource Management.</p>
+          
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">Explore Projects</a>
             <a href="#contact" class="btn-outline">Contact Me</a>
@@ -341,7 +398,7 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- PROJECTS SECTION: Showcases major engineering projects with thumbnail placeholders -->
     <section id="projects">
       <div class="section-header">
         <h2>Projects</h2>
@@ -349,6 +406,7 @@
       </div>
 
       <div class="projects-list">
+        <!-- Project Item 1 -->
         <div class="project-item">
           <img src="https://via.placeholder.com/280x180" alt="Drivetrain Sprocket Assembly" class="project-img">
           <div class="project-info">
@@ -358,6 +416,7 @@
           </div>
         </div>
 
+        <!-- Project Item 2 -->
         <div class="project-item">
           <img src="https://via.placeholder.com/280x180" alt="Chain Tensioner" class="project-img">
           <div class="project-info">
@@ -369,13 +428,14 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- SKILLS SECTION: Displays categorization of CAD software, technical analysis, & technical tools -->
     <section id="skills">
       <div class="section-header">
         <h2>Skills & Tools</h2>
         <div class="line"></div>
       </div>
 
+      <!-- Skill Category: Software -->
       <div class="skills-category">
         <h3>Engineering Software</h3>
         <div class="tag-group">
@@ -385,6 +445,7 @@
         </div>
       </div>
 
+      <!-- Skill Category: Engineering Methods -->
       <div class="skills-category">
         <h3>Analysis & Methods</h3>
         <div class="tag-group">
@@ -394,6 +455,7 @@
         </div>
       </div>
 
+      <!-- Skill Category: Programming & Hardware -->
       <div class="skills-category">
         <h3>Programming & Hardware</h3>
         <div class="tag-group">
@@ -404,8 +466,10 @@
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER: Bottom bar containing copyright info and contact anchor -->
   <footer id="contact">
     <p>© Ryman Mahnke — Engineering Portfolio</p>
   </footer>
