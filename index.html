@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Portfolio</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #4b5563;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.1;
+    }
+
+    .hero-text h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      color: #4b5563;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background-color: #e5e7eb;
+      color: #1f2937;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #d1d5db;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #111827;
+    }
+
+    /* Projects Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #f3f4f6;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .card-desc {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .card-link {
+      color: #2563eb;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .skill-card p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Your Name</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Your Name</h1>
+          <h2>Mechanical Engineering Student</h2>
+          <p>Passionate and detail-oriented mechanical engineering student focused on CAD design, dynamic mechanical systems, and simulation analysis.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Get In Touch</a>
+            <a href="#" class="btn-secondary">View Resume 📝</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Replace placeholder.com URL with your photo path -->
+          <img src="https://via.placeholder.com/280" alt="Profile Photo" class="profile-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Project CAD render" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Drivetrain Sprocket Assembly</h3>
+            <p class="card-desc">Designed and optimized the sprockets, motor shaft, chain, and chain guard for FSAE competition.</p>
+            <a href="#" class="card-link">View Details &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Project assembly" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Chain Tensioner</h3>
+            <p class="card-desc">Designed a precision chain tensioning assembly to measure chain stretch under load.</p>
+            <a href="#" class="card-link">View Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Engineering Software</h3>
+          <p>SolidWorks, ANSYS Workbench, Fusion 360</p>
+        </div>
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <p>Python, MATLAB</p>
+        </div>
+        <div class="skill-card">
+          <h3>Analysis</h3>
+          <p>Finite Element Analysis (FEA), CFD</p>
+        </div>
+        <div class="skill-card">
+          <h3>Manufacturing</h3>
+          <p>3D Printing, CNC Milling, Manual Lathe</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
