@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Portfolio</title>
   <style>
-    /* Dark Slate & Teal Color Palette */
+    /* White Theme with Emerald / Forest Accent */
     :root {
-      --bg-color: #0f172a;        /* Deep slate background */
-      --card-bg: #1e293b;       /* Dark slate card container */
-      --accent-color: #0d9488;   /* Vibrant teal accent */
-      --accent-hover: #14b8a6;   /* Bright teal hover state */
-      --text-main: #f8fafc;      /* Crisp white heading text */
-      --text-muted: #94a3b8;     /* Soft slate body text */
-      --border-color: #334155;   /* Subtle divider border */
-      --tag-bg: #334155;         /* Badge background */
-      --tag-text: #cbd5e1;       /* Badge text */
+      --bg-color: #f8f9fa;        /* Light grey background */
+      --card-bg: #ffffff;        /* Clean white card background */
+      --accent-color: #059669;    /* Vibrant emerald accent */
+      --accent-hover: #047857;    /* Deeper emerald for hover states */
+      --text-main: #111827;       /* Dark charcoal headings */
+      --text-muted: #4b5563;      /* Soft body text */
+      --border-color: #e5e7eb;    /* Subtle grey border */
+      --tag-bg: #f3f4f6;         /* Light grey pill background */
+      --tag-text: #1f2937;       /* Pill text color */
     }
 
     * {
@@ -44,7 +44,7 @@
 
     /* Navigation Bar */
     nav {
-      background-color: #0f172a;
+      background-color: #ffffff;
       border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
@@ -78,7 +78,7 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent-hover);
+      color: var(--accent-color);
     }
 
     /* Hero Banner Header */
@@ -95,7 +95,7 @@
       grid-template-columns: 200px 1fr;
       gap: 40px;
       align-items: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
     .profile-img {
@@ -114,7 +114,7 @@
 
     .hero-subtitle {
       font-size: 1.25rem;
-      color: var(--accent-hover);
+      color: var(--accent-color);
       font-weight: 600;
       margin-bottom: 12px;
     }
@@ -146,17 +146,16 @@
 
     .btn-outline {
       border: 1px solid var(--border-color);
-      background: transparent;
+      background: #ffffff;
       color: var(--text-main);
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: 600;
-      transition: background-color 0.2s, border-color 0.2s;
+      transition: background-color 0.2s;
     }
 
     .btn-outline:hover {
       background-color: var(--tag-bg);
-      border-color: var(--text-muted);
     }
 
     /* Section Headings */
@@ -193,12 +192,12 @@
       display: grid;
       grid-template-columns: 240px 1fr;
       overflow: hidden;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .project-item:hover {
       transform: translateY(-2px);
-      border-color: var(--accent-color);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
     }
 
     .project-img {
@@ -206,7 +205,7 @@
       height: 100%;
       min-height: 160px;
       object-fit: cover;
-      background-color: #334155;
+      background-color: #e5e7eb;
     }
 
     .project-info {
@@ -229,9 +228,13 @@
     }
 
     .link-btn {
-      color: var(--accent-hover);
+      color: var(--accent-color);
       font-weight: 600;
       font-size: 0.9rem;
+    }
+
+    .link-btn:hover {
+      color: var(--accent-hover);
     }
 
     /* Skills Badges */
@@ -395,7 +398,7 @@
   </main>
 
   <footer id="contact">
-    <p>© Eric Balch — Engineering Portfolio</p>
+    <p>© Ryman Mahnke — Engineering Portfolio</p>
   </footer>
 
 </body>
