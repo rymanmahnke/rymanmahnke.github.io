@@ -7,7 +7,7 @@
   <style>
     /* White Theme with Emerald / Forest Accent */
     :root {
-      --bg-color: #f8f9fa;        /* Light grey background */
+      --bg-color: #C5C5C7;        /* Light grey background */
       --card-bg: #ffffff;        /* Clean white card background */
       --accent-color: #059669;    /* Vibrant emerald accent */
       --accent-hover: #047857;    /* Deeper emerald for hover states */
@@ -22,8 +22,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+      font-family: 'Outfit', sans-serif;
+      h1, h2, h3, .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      }
 
     body {
       background-color: var(--bg-color);
@@ -304,10 +306,9 @@
   <!-- Navigation -->
   <nav>
     <div class="container nav-container">
-      <a href="#" class="logo">Eric Balch</a>
+      <a href="#" class="logo">Ryman Mahnke</a>
       <ul class="nav-links">
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -320,13 +321,13 @@
       <div class="hero-card">
         <img src="https://via.placeholder.com/180" alt="Eric Balch Photo" class="profile-img">
         <div class="hero-content">
-          <h1>Eric Balch</h1>
-          <p class="hero-subtitle">Mechanical Engineering Student</p>
-          <p class="hero-bio">Passionate mechanical engineering student focused on dynamic mechanical systems, computer-aided design, manufacturing, and Finite Element Analysis.</p>
+          <h1>Ryman Mahnke</h1>
+          <p class="hero-subtitle">Mechanical Engineering Student @ UCLA</p>
+          <p class="hero-bio">Passionate student interested in Automotive/Electric Vehicle Development, Renewable Energy Grid Infrastructure, and Water Resource Management.</p>
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">Explore Projects</a>
             <a href="#contact" class="btn-outline">Contact Me</a>
-            <a href="#" class="btn-outline">Resume 📝</a>
+            <a href="#" class="btn-outline">View my Resume</a>
           </div>
         </div>
       </div>
@@ -343,7 +344,7 @@
         <div class="project-item">
           <img src="https://via.placeholder.com/240x160" alt="Drivetrain Sprocket Assembly" class="project-img">
           <div class="project-info">
-            <h3>Drivetrain Sprocket Assembly</h3>
+            <h3>Differential Mount Assembly</h3>
             <p>Designed and optimized the sprockets, motor shaft, chain, and chain guard for competition.</p>
             <div><a href="#" class="link-btn">View Details &rarr;</a></div>
           </div>
@@ -352,7 +353,7 @@
         <div class="project-item">
           <img src="https://via.placeholder.com/240x160" alt="Chain Tensioner" class="project-img">
           <div class="project-info">
-            <h3>Chain Tensioner</h3>
+            <h3>Motor Mount Assembly</h3>
             <p>Designed a precision chain tensioning assembly to measure and monitor strain and chain stretch.</p>
             <div><a href="#" class="link-btn">View Details &rarr;</a></div>
           </div>
@@ -381,13 +382,13 @@
         <div class="tag-group">
           <span class="tag">Finite Element Analysis (FEA)</span>
           <span class="tag">Topology Optimization</span>
+          <span class="tag">CAM/Toolpathing</span>
         </div>
       </div>
 
       <div class="skills-category">
         <h3>Programming & Hardware</h3>
         <div class="tag-group">
-          <span class="tag">Python</span>
           <span class="tag">MATLAB</span>
           <span class="tag">Arduino</span>
           <span class="tag">3D Printing</span>
