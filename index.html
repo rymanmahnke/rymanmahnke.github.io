@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Portfolio</title>
   <style>
-    /* White Theme with Emerald / Forest Accent */
     :root {
-      --bg-color: #C5C5C7;        /* Light grey background */
+      --bg-color: #ffffff;        /* Light grey background */
       --card-bg: #ffffff;        /* Clean white card background */
-      --accent-color: #059669;    /* Vibrant emerald accent */
+      --accent-color: #2563EB;    /* Vibrant emerald accent */
       --accent-hover: #047857;    /* Deeper emerald for hover states */
       --text-main: #111827;       /* Dark charcoal headings */
       --text-muted: #4b5563;      /* Soft body text */
@@ -41,7 +40,7 @@
     .container {
       max-width: 1050px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     /* Navigation Bar */
@@ -87,27 +86,25 @@
     .hero {
       padding: 70px 0 50px;
     }
-
+    /* Update .hero-card (around line 52) */
     .hero-card {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 48px;
+      padding: 32px; /* reduced internal padding */
       border: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 40px;
+      grid-template-columns: 240px 1fr; /* increased left column from 200px to 240px */
+      gap: 32px; /* reduced gap between image and text */
       align-items: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
-
     .profile-img {
-      width: 180px;
-      height: 180px;
+      width: 220px; /* increased from 180px */
+      height: 220px; /* increased from 180px */
       border-radius: 20px;
       object-fit: cover;
       border: 2px solid var(--accent-color);
-    }
-
+    }    
     .hero-content h1 {
       font-size: 2.2rem;
       font-weight: 800;
