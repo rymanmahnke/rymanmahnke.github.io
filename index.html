@@ -6,54 +6,52 @@
   <title>Engineering Portfolio</title>
   
   <!-- Font Imports from Google Fonts -->
-  <!-- 'Outfit' is used for clean body text; 'Space Grotesk' is used for modern headings -->
+  <!-- 'Outfit' for readable body text; 'Space Grotesk' for modern headings -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
     /* ==========================================================================
        1. GLOBAL THEME VARIABLES
        Defines the color scheme and theme variables used across the entire site.
-       Updating a color here changes it everywhere automatically.
        ========================================================================== */
     :root {
-      --bg-color: #ffffff;      /* Main background color of the webpage */
-      --card-bg: #ffffff;        /* Background color for cards, buttons, and sections */
-      --accent-color: #1d2d52;   /* Primary accent color (Blue) for highlights, borders, & links */
-      --accent-hover: #1d4ed8;   /* Darker blue tint when hovering over buttons/links */
-      --text-main: #111827;      /* Primary text color for titles and bold text */
-      --text-muted: #4b5563;     /* Muted gray text color for body paragraphs and subtitles */
-      --border-color: #e5e7eb;   /* Light gray border line color around cards and dividers */
-      --tag-bg: #f3f4f6;        /* Light gray fill color for skill badge tags */
-      --tag-text: #1f2937;      /* Text color inside skill badge tags */
+      --bg-color: #ffffff;      /* Main background color */
+      --card-bg: #ffffff;        /* Background color for cards & modals */
+      --accent-color: #1d2d52;   /* Primary navy accent color */
+      --accent-hover: #1d4ed8;   /* Hover blue tint */
+      --text-main: #111827;      /* Primary body text color */
+      --text-muted: #4b5563;     /* Muted gray text color */
+      --border-color: #e5e7eb;   /* Light gray border line color */
+      --tag-bg: #f3f4f6;        /* Light gray fill for skill badges */
+      --tag-text: #1f2937;      /* Skill badge text color */
     }
 
     /* ==========================================================================
        2. BASE RESET & TYPOGRAPHY
-       Resets browser defaults (margins/padding) and sets general typography.
+       Resets default margins, padding, and sets core typography fonts.
        ========================================================================== */
     * {
-      box-sizing: border-box; /* Includes padding and borders in total element width/height */
-      margin: 0;               /* Removes default browser outer margins */
-      padding: 0;              /* Removes default browser inner padding */
-      font-family: 'Outfit', sans-serif; /* Sets default font for all body text */
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
     }
 
-    /* Sets heading-specific font family for prominent section headers and titles */
     h1, h2, h3, .logo {
       font-family: 'Space Grotesk', sans-serif;
     }
 
     body {
-      background-color: var(--bg-color); /* Applies background color from :root */
-      color: var(--text-main);           /* Applies default text color */
-      line-height: 1.6;                  /* Adds vertical spacing between text lines for readability */
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
     a {
-      text-decoration: none; /* Removes default underline from hyperlinks */
-      color: inherit;        /* Inherits text color from parent element */
+      text-decoration: none;
+      color: inherit;
     }
 
     /* ==========================================================================
@@ -61,28 +59,28 @@
        Controls maximum page width and centers content horizontally.
        ========================================================================== */
     .container {
-      max-width: 1150px; /* Limits maximum site width on large desktop monitors */
-      margin: 0 auto;    /* Centers content horizontally on screen */
-      padding: 0 16px;   /* Prevents content from touching left/right screen edges on mobile */
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 16px;
     }
 
     /* ==========================================================================
        4. NAVIGATION BAR
-       Sticky header bar at the top of the browser window.
+       Sticky header bar fixed to the top of the viewport.
        ========================================================================== */
     nav {
       background-color: var(--accent-color);
-      border-bottom: 1px solid var(--border-color); /* Bottom separator line */
-      position: sticky; /* Keeps top navigation fixed while scrolling down */
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
       top: 0;
-      z-index: 100;     /* Ensures navigation remains on top of other elements */
+      z-index: 100;
     }
 
     .nav-container {
       display: flex;
-      justify-content: space-between; /* Pushes brand logo to left and links to right */
-      align-items: center;            /* Centers logo and links vertically */
-      height: 70px;                   /* Navigation bar height */
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
     }
 
     .logo {
@@ -93,48 +91,47 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;          /* Horizontally spaces navigation links */
-      list-style: none;   /* Removes bullet points from navigation list */
+      gap: 24px;
+      list-style: none;
     }
 
     .nav-links a {
       color: #ffffff;
       font-weight: 500;
       font-size: 1.05rem;
-      transition: color 0.2s; /* Smooth color transition effect on hover */
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #ffffff; /* Highlight color on hover */
+      color: #ffffff;
     }
 
     /* ==========================================================================
        5. HERO / PROFILE SECTION
-       Top hero card displaying headshot photo, bio, and call-to-action buttons.
+       Profile photo, introductory bio, and call-to-action buttons.
        ========================================================================== */
     .hero {
-      padding: 30px 0 20px; /* Outer top and bottom margins for hero wrapper */
+      padding: 30px 0 20px;
     }
 
     .hero-card {
       background: var(--card-bg);
-      border-radius: 18px;                          /* Rounded card corners */
-      padding: 36px;                                /* Inner spacing inside card */
+      border-radius: 18px;
+      padding: 36px;
       border: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 280px 1fr;             /* Left column (280px for photo), Right column (flexible text) */
-      gap: 36px;                                    /* Gap between photo and bio text */
-      align-items: center;                          /* Vertically aligns photo with bio text */
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);   /* Soft subtle drop shadow */
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     }
 
-    /* Controls profile picture size, border accent, and rounded corners */
     .profile-img {
       width: 270px;
       height: 270px;
       border-radius: 20px;
-      object-fit: cover;                             /* Prevents photo distortion or stretching */
-      border: 3px solid var(--accent-color);         /* Colored outline accent border */
+      object-fit: cover;
+      border: 3px solid var(--accent-color);
     }
 
     .hero-content h1 {
@@ -157,14 +154,12 @@
       margin-bottom: 28px;
     }
 
-    /* Action button container */
     .hero-actions {
       display: flex;
-      gap: 14px;          /* Spacing between buttons */
-      flex-wrap: wrap;    /* Allows buttons to wrap to next line on small screens */
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    /* Solid Primary Button Style */
     .btn-primary {
       background-color: var(--accent-color);
       color: #ffffff;
@@ -179,7 +174,6 @@
       background-color: var(--accent-hover);
     }
 
-    /* Outline Secondary Button Style */
     .btn-outline {
       border: 1px solid var(--border-color);
       background: #ffffff;
@@ -196,11 +190,11 @@
     }
 
     /* ==========================================================================
-       6. SECTION HEADINGS WITH DIVIDER LINES
-       Reusable header style for 'Projects' and 'Skills & Tools' sections.
+       6. SECTION HEADINGS & DIVIDERS
+       Header structure with horizontal accent line.
        ========================================================================== */
     .section-header {
-      margin: 40px 0 24px; /* Space above and below section headings */
+      margin: 40px 0 24px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -212,7 +206,6 @@
       color: var(--text-main);
     }
 
-    /* Horizontal divider line stretching across remaining width */
     .section-header .line {
       flex-grow: 1;
       height: 1px;
@@ -221,12 +214,12 @@
 
     /* ==========================================================================
        7. PROJECTS SECTION
-       Card layout for displaying engineering projects with images and details.
+       Grid list cards displaying project previews and trigger buttons.
        ========================================================================== */
     .projects-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;            /* Vertical spacing between project cards */
+      gap: 20px;
     }
 
     .project-item {
@@ -234,12 +227,11 @@
       border-radius: 14px;
       border: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 280px 1fr; /* 280px preview image on left, text on right */
-      overflow: hidden;                 /* Keeps image clipped inside rounded border */
+      grid-template-columns: 280px 1fr;
+      overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    /* Hover effect: lifts card slightly and increases shadow */
     .project-item:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
@@ -249,7 +241,7 @@
       width: 100%;
       height: 100%;
       min-height: 180px;
-      object-fit: cover;     /* Crops image cleanly to fit left column area */
+      object-fit: cover;
       background-color: #e5e7eb;
     }
 
@@ -272,6 +264,7 @@
       margin-bottom: 18px;
     }
 
+    /* Clean borderless trigger button for opening details modals */
     .link-btn {
       background: none;
       border: none;
@@ -285,22 +278,22 @@
       gap: 6px;
       transition: color 0.2s ease, gap 0.2s ease;
     }
-    
+
     .link-btn:hover {
       color: var(--accent-hover);
-      gap: 10px; /* Gives a smooth subtle arrow slide on hover */
+      gap: 10px;
     }
 
     /* ==========================================================================
        8. SKILLS SECTION
-       Category boxes containing pill-style skill badges.
+       Category cards with pill badges.
        ========================================================================== */
     .skills-category {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 14px;
       padding: 28px;
-      margin-bottom: 18px;   /* Vertical gap between skill category cards */
+      margin-bottom: 18px;
     }
 
     .skills-category h3 {
@@ -311,45 +304,44 @@
 
     .tag-group {
       display: flex;
-      flex-wrap: wrap;       /* Allows skill badges to wrap naturally across rows */
-      gap: 10px;            /* Spacing between individual skill tags */
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* Individual pill badge for skills */
     .tag {
       background-color: var(--tag-bg);
       color: var(--tag-text);
       padding: 8px 16px;
-      border-radius: 20px;  /* Creates rounded pill shape */
+      border-radius: 20px;
       font-size: 0.95rem;
       font-weight: 500;
     }
 
     /* ==========================================================================
        9. FOOTER
-       Copyright and contact line at the bottom of the page.
+       Social links, contact anchors, and copyright bar.
        ========================================================================== */
     footer {
-      background-color: var(--accent-color); /* Dark navy background matching the site's footer */
+      background-color: var(--accent-color);
       color: #ffffff;
       text-align: center;
       padding: 60px 0 30px;
       margin-top: 80px;
     }
-    
+
     .connect-title {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 8px;
       color: #ffffff;
     }
-    
+
     .connect-sub {
       color: #94a3b8;
       font-size: 1rem;
       margin-bottom: 24px;
     }
-    
+
     .social-links {
       display: flex;
       justify-content: center;
@@ -357,149 +349,154 @@
       gap: 20px;
       margin-bottom: 40px;
     }
-    
+
     .social-icon {
       width: 36px;
       height: 36px;
       transition: transform 0.2s ease;
     }
-    
+
     .social-links a:hover .social-icon {
-      transform: translateY(-4px); /* Subtle hover lift effect */
+      transform: translateY(-4px);
     }
-    
+
     .copyright {
       color: #64748b;
       font-size: 0.85rem;
       border-top: 1px solid #1e293b;
       padding-top: 24px;
     }
-     /* ==========================================================================
+
+    /* ==========================================================================
        10. PROJECT MODAL POPUPS
-       Styles the popup modal containers, overlays, close buttons, and image galleries.
+       Popup modal containers, overlays, close buttons, and image galleries.
        ========================================================================== */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.6);
-      }
-    
-      .modal-content {
-        background-color: #ffffff;
-        margin: 5% auto;
-        padding: 30px;
-        border-radius: 8px;
-        max-width: 800px;
-        width: 90%;
-        position: relative;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-    
-      .modal-header-line {
-        border: none;
-        height: 1px;
-        background-color: var(--border-color);
-        margin: 16px 0 24px;
-      }
-      
-      .modal-section-divider {
-        border: none;
-        height: 1px;
-        background-color: #f1f5f9;
-        margin: 24px 0;
-      }
-      
-      .modal-section-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      
-      .modal-list {
-        padding-left: 20px;
-        color: var(--text-muted);
-      }
-      
-      .modal-list li {
-        margin-bottom: 8px;
-        line-height: 1.5;
-      }
-            
-      .close-btn {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 28px;
-        font-weight: bold;
-        color: #aaa;
-        cursor: pointer;
-      }
-      
-      .close-btn:hover {
-        color: #000;
-      }
-      
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-top: 15px;
-      }
-      
-      .gallery-item img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-      }
-      
-      .gallery-item .caption {
-        font-size: 0.85rem;
-        color: #666;
-        margin-top: 4px;
-      }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      margin: 5% auto;
+      padding: 32px;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    /* Modal Dividers & Text Styling */
+    .modal-header-line {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 16px 0 24px;
+    }
+
+    .modal-section-divider {
+      border: none;
+      height: 1px;
+      background-color: #f1f5f9;
+      margin: 24px 0;
+    }
+
+    .modal-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-list {
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+
+    .modal-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Image Gallery Grid inside Modal */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-item .caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
     /* ==========================================================================
        11. MOBILE RESPONSIVENESS
-       Adjusts multi-column grid layouts into single-column stacks on mobile screens.
+       Responsive layout breakpoints for smaller viewports.
        ========================================================================== */
     @media (max-width: 768px) {
-      /* Stacks profile photo on top of bio text on smaller screens */
       .hero-card {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 28px 20px;
       }
+
       .profile-img {
-        margin: 0 auto;     /* Centers picture on mobile */
+        margin: 0 auto;
         width: 220px;
         height: 220px;
       }
-      /* Stacks project images on top of project descriptions on mobile */
+
       .project-item {
         grid-template-columns: 1fr;
       }
+
       .hero-actions {
-        justify-content: center; /* Centers action buttons on mobile screens */
+        justify-content: center;
       }
     }
-    </style>
+  </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-       HTML HEADER / NAVIGATION
-       Displays site logo and menu anchor links.
-       ========================================================================== -->
+     HEADER / NAVIGATION BAR
+     ========================================================================== -->
   <nav>
     <div class="container nav-container">
       <a href="#" class="logo">Ryman Mahnke | Engineering Portfolio</a>
@@ -512,22 +509,18 @@
   </nav>
 
   <!-- ==========================================================================
-       MAIN CONTENT CONTAINER
-       Wraps main sections in a single structured container.
-       ========================================================================== -->
+     MAIN CONTENT WRAPPER
+     ========================================================================== -->
   <main class="container">
 
-    <!-- HERO SECTION: Displays profile headshot photo, introduction, bio, and key action links -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-card">
-        <!-- Profile Picture: Pointing to Ryman Headshot.png uploaded in root directory -->
         <img src="Ryman Headshot.png" alt="Ryman Mahnke Photo" class="profile-img">
-        
         <div class="hero-content">
           <h1>Ryman Mahnke</h1>
           <p class="hero-subtitle">Mechanical Engineering Student @ UCLA</p>
           <p class="hero-bio">Passionate student interested in Automotive/Electric Vehicle Development, Renewable Energy Grid Infrastructure, and Water Resource Management.</p>
-          
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">Explore Projects</a>
             <a href="#contact" class="btn-outline">Contact Me</a>
@@ -537,7 +530,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION: Showcases major engineering projects with thumbnail placeholders -->
+    <!-- PROJECTS SECTION -->
     <section id="projects">
       <div class="section-header">
         <h2>Projects</h2>
@@ -545,36 +538,40 @@
       </div>
 
       <div class="projects-list">
-        <!-- Project Item 1 -->
+        <!-- Project Card 1: Differential Mounting Assembly -->
         <div class="project-item">
           <img src="https://via.placeholder.com/280x180" alt="Drivetrain Sprocket Assembly" class="project-img">
           <div class="project-info">
             <h3>Differential Mounting Assembly</h3>
             <p>Designed and optimized the sprockets, motor shaft, chain, and chain guard for competition.</p>
-            <div><button class="link-btn" onclick="openModal('differential-modal')">View Details &rarr;</button></div>
+            <div>
+              <button class="link-btn" onclick="openModal('differential-modal')">View Details &rarr;</button>
+            </div>
           </div>
         </div>
 
-        <!-- Project Item 2 -->
+        <!-- Project Card 2: Motor Mounting Assembly -->
         <div class="project-item">
           <img src="https://via.placeholder.com/280x180" alt="Chain Tensioner" class="project-img">
           <div class="project-info">
             <h3>Motor Mounting Assembly</h3>
             <p>Designed a precision chain tensioning assembly to measure and monitor strain and chain stretch.</p>
-            <div><button class="link-btn" onclick="openModal('motor-modal')">View Details &rarr;</button></div>
+            <div>
+              <button class="link-btn" onclick="openModal('motor-modal')">View Details &rarr;</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION: Displays categorization of CAD software, technical analysis, & technical tools -->
+    <!-- SKILLS SECTION -->
     <section id="skills">
       <div class="section-header">
         <h2>Skills & Tools</h2>
         <div class="line"></div>
       </div>
 
-      <!-- Skill Category: Software -->
+      <!-- Category: Software -->
       <div class="skills-category">
         <h3>Engineering Software</h3>
         <div class="tag-group">
@@ -584,7 +581,7 @@
         </div>
       </div>
 
-      <!-- Skill Category: Engineering Methods -->
+      <!-- Category: Methods -->
       <div class="skills-category">
         <h3>Analysis & Methods</h3>
         <div class="tag-group">
@@ -594,7 +591,7 @@
         </div>
       </div>
 
-      <!-- Skill Category: Programming & Hardware -->
+      <!-- Category: Programming & Fabrication -->
       <div class="skills-category">
         <h3>Programming & Hardware</h3>
         <div class="tag-group">
@@ -608,21 +605,22 @@
 
   </main>
 
-  <!-- FOOTER: Bottom bar containing copyright info and contact anchor -->
+  <!-- ==========================================================================
+     FOOTER SECTION
+     ========================================================================== -->
   <footer id="contact">
     <div class="container">
       <h2 class="connect-title">Let's Connect!</h2>
       <p class="connect-sub">Find me on LinkedIn or send an Email:</p>
       
       <div class="social-links">
-        <!-- LinkedIn Link -->
+        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/ryman-mahnke/" target="_blank" aria-label="LinkedIn">
           <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A66C2">
             <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
           </svg>
         </a>
-  
-        <!-- Email Link -->
+        <!-- Email -->
         <a href="mailto:ryman.mahnke@gmail.com" aria-label="Email">
           <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="#EA4335" d="M12 12.713L1.102 4.104A2.001 2.001 0 0 1 2.5 3.5h19c.54 0 1.033.214 1.398.56l-10.898 8.653z"/>
@@ -632,86 +630,145 @@
           </svg>
         </a>
       </div>
-  
-      <p>© Ryman Mahnke — Engineering Portfolio</p>
-      </div>
+
+      <p class="copyright">&copy; Ryman Mahnke — Engineering Portfolio</p>
+    </div>
   </footer>
-<!-- Motor Mount Modal -->
-<div id="motor-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('motor-modal')">&times;</span>
-    
-    <h2>Motor Mounting Assembly</h2>
-    <hr class="modal-header-line">
 
-    <!-- Section 1: Goals -->
-    <div class="modal-block">
-      <h3 class="modal-section-title">🎯 Project Goals</h3>
-      <ul class="modal-list">
-        <li>Design a structural mount capable of supporting torsional load requirements under peak acceleration.</li>
-        <li>Minimize overall component weight without compromising structural rigidity or fatigue life.</li>
-        <li>Ensure seamless integration with existing chassis attachment points and drivetrain geometry.</li>
-      </ul>
-    </div>
+  <!-- ==========================================================================
+     PROJECT DETAILS MODALS
+     ========================================================================== -->
 
-    <hr class="modal-section-divider">
+  <!-- Modal 1: Differential Mounting Assembly -->
+  <div id="differential-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('differential-modal')">&times;</span>
+      <h2>Differential Mounting Assembly</h2>
+      <hr class="modal-header-line">
 
-    <!-- Section 2: Actions -->
-    <div class="modal-block">
-      <h3 class="modal-section-title">🛠️ Project Actions</h3>
-      <ul class="modal-list">
-        <li>Modeled complete 3D assembly geometry in SolidWorks with parameterized mounting interfaces.</li>
-        <li>Conducted Finite Element Analysis (FEA) in Ansys Workbench to identify stress concentrations and yield margins.</li>
-        <li>Selected optimal strain gauge placements based on von Mises stress contours for physical testing validation.</li>
-      </ul>
-    </div>
+      <div class="modal-block">
+        <h3 class="modal-section-title">🎯 Project Goals</h3>
+        <ul class="modal-list">
+          <li>Design a lightweight differential mounting bracket to withstand dynamic drivetrain torque loads.</li>
+          <li>Ensure precise alignment between front drive sprockets and rear differential hub.</li>
+          <li>Allow simple adjustments for chain tensioning during pit maintenance.</li>
+        </ul>
+      </div>
 
-    <hr class="modal-section-divider">
+      <hr class="modal-section-divider">
 
-    <!-- Section 3: Solutions -->
-    <div class="modal-block">
-      <h3 class="modal-section-title">💡 Project Solutions & Results</h3>
-      <ul class="modal-list">
-        <li>Optimized bracket wall thickness, reducing total weight by 15% while exceeding minimum safety factor thresholds.</li>
-        <li>Implemented targeted structural gussets at high-stress mounts to eliminate deflection under dynamic loading.</li>
-        <li>Validated FEA stress predictions against physical strain gauge telemetry during bench testing.</li>
-      </ul>
-    </div>
+      <div class="modal-block">
+        <h3 class="modal-section-title">🛠️ Project Actions</h3>
+        <ul class="modal-list">
+          <li>Engineered 3D CAD models in SolidWorks with tight machining tolerances.</li>
+          <li>Executed static strain and displacement analyses in Ansys Workbench under cornering loads.</li>
+          <li>Manufactured prototype components using CNC milling and manual lathe setups.</li>
+        </ul>
+      </div>
 
-    <hr class="modal-section-divider">
+      <hr class="modal-section-divider">
 
-    <!-- Section 4: Media -->
-    <div class="modal-block">
-      <h3 class="modal-section-title">📷 Media & CAD Views</h3>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://via.placeholder.com/400x250" alt="SolidWorks CAD Model">
-          <div class="caption">SolidWorks assembly CAD model</div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://via.placeholder.com/400x250" alt="Ansys Stress Analysis">
-          <div class="caption">Ansys FEA von Mises stress distribution</div>
+      <div class="modal-block">
+        <h3 class="modal-section-title">💡 Project Solutions & Results</h3>
+        <ul class="modal-list">
+          <li>Reduced mounting unsprung mass while achieving a minimum factor of safety of 2.2.</li>
+          <li>Streamlined differential removal time during trackside maintenance.</li>
+        </ul>
+      </div>
+
+      <hr class="modal-section-divider">
+
+      <div class="modal-block">
+        <h3 class="modal-section-title">📷 Media & CAD Views</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x250" alt="Differential Assembly Model">
+            <div class="caption">SolidWorks differential mount CAD</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x250" alt="FEA Load Analysis">
+            <div class="caption">Ansys FEA stress distribution</div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
-</div>
+
+  <!-- Modal 2: Motor Mounting Assembly -->
+  <div id="motor-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('motor-modal')">&times;</span>
+      <h2>Motor Mounting Assembly</h2>
+      <hr class="modal-header-line">
+
+      <div class="modal-block">
+        <h3 class="modal-section-title">🎯 Project Goals</h3>
+        <ul class="modal-list">
+          <li>Design a structural mount capable of supporting torsional load requirements under peak acceleration.</li>
+          <li>Minimize overall component weight without compromising structural rigidity or fatigue life.</li>
+          <li>Ensure seamless integration with existing chassis attachment points and drivetrain geometry.</li>
+        </ul>
+      </div>
+
+      <hr class="modal-section-divider">
+
+      <div class="modal-block">
+        <h3 class="modal-section-title">🛠️ Project Actions</h3>
+        <ul class="modal-list">
+          <li>Modeled complete 3D assembly geometry in SolidWorks with parameterized mounting interfaces.</li>
+          <li>Conducted Finite Element Analysis (FEA) in Ansys Workbench to identify stress concentrations and yield margins.</li>
+          <li>Selected optimal strain gauge placements based on von Mises stress contours for physical testing validation.</li>
+        </ul>
+      </div>
+
+      <hr class="modal-section-divider">
+
+      <div class="modal-block">
+        <h3 class="modal-section-title">💡 Project Solutions & Results</h3>
+        <ul class="modal-list">
+          <li>Optimized bracket wall thickness, reducing total weight by 15% while exceeding minimum safety factor thresholds.</li>
+          <li>Implemented targeted structural gussets at high-stress mounts to eliminate deflection under dynamic loading.</li>
+          <li>Validated FEA stress predictions against physical strain gauge telemetry during bench testing.</li>
+        </ul>
+      </div>
+
+      <hr class="modal-section-divider">
+
+      <div class="modal-block">
+        <h3 class="modal-section-title">📷 Media & CAD Views</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x250" alt="SolidWorks CAD Model">
+            <div class="caption">SolidWorks assembly CAD model</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x250" alt="Ansys Stress Analysis">
+            <div class="caption">Ansys FEA von Mises stress distribution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     JAVASCRIPT: MODAL POPUP CONTROLS
+     ========================================================================== -->
   <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'block';
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-
-  // Close modal when clicking anywhere outside of it
-  window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-      event.target.style.display = 'none';
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
     }
-  }
-</script>
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Close modal when user clicks outside the modal content window
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    }
+  </script>
+
 </body>
 </html>
