@@ -634,5 +634,21 @@
     </div>
   </div>
 </div>
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Close modal when clicking anywhere outside of it
+  window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+    }
+  }
+</script>
 </body>
 </html>
