@@ -647,11 +647,11 @@
       <hr class="modal-header-line">
 
       <div class="modal-block">
-        <h3 class="modal-section-title">🎯 Project Goals</h3>
+        <h3 class="modal-section-title">⚠️ Project Problem</h3>
         <ul class="modal-list">
-          <li>Design a lightweight differential mounting bracket to withstand dynamic drivetrain torque loads.</li>
-          <li>Ensure precise alignment between front drive sprockets and rear differential hub.</li>
-          <li>Allow simple adjustments for chain tensioning during pit maintenance.</li>
+          <li>Baseline - Differential needs to be mounted onto the chassis</li>
+          <li>Old differential mounts did not integrate a jacking point, which required extra manufacturing and design to fix a jacking point onto the car</li>
+          <li>New Front-to-back final gear ratio changes the force and requires a rework of the mounts to ensure stability</li>
         </ul>
       </div>
 
@@ -660,9 +660,9 @@
       <div class="modal-block">
         <h3 class="modal-section-title">🛠️ Project Actions</h3>
         <ul class="modal-list">
-          <li>Engineered 3D CAD models in SolidWorks with tight machining tolerances.</li>
-          <li>Executed static strain and displacement analyses in Ansys Workbench under cornering loads.</li>
-          <li>Manufactured prototype components using CNC milling and manual lathe setups.</li>
+          <li>Engineered 3D CAD models in SolidWorks, integrating the jacking point into the differnetial mounts while still passing all safety requirements</li>
+          <li>Completed topology optimizations of each differential mount in Ansys to eliminate all unnecessary mass.</li>
+          <li>Ran Finite Element Analysis (FEA) of each mount to test stress and strain margins and determine a factor of safety</li>
         </ul>
       </div>
 
@@ -702,11 +702,12 @@
       <hr class="modal-header-line">
 
       <div class="modal-block">
-        <h3 class="modal-section-title">🎯 Project Goals</h3>
+        <h3 class="modal-section-title">⚠️ Project Problem</h3>
         <ul class="modal-list">
-          <li>Design a structural mount capable of supporting torsional load requirements under peak acceleration.</li>
-          <li>Minimize overall component weight without compromising structural rigidity or fatigue life.</li>
-          <li>Ensure seamless integration with existing chassis attachment points and drivetrain geometry.</li>
+          <li>Baseline - Motor Needs to be mounted onto the chassis</li>
+          <li>Old motor mounts were not designed to be weight efficient while still being structurally rigid.</li>
+          <li>New Front-to-back final gear ratio changes the force and requires a rework of the mounts to ensure stability</li>
+          <li>Not enough validation of hand calculations using technology, which led to point deductions at competitions</li>
         </ul>
       </div>
 
@@ -716,8 +717,9 @@
         <h3 class="modal-section-title">🛠️ Project Actions</h3>
         <ul class="modal-list">
           <li>Modeled complete 3D assembly geometry in SolidWorks with parameterized mounting interfaces.</li>
+          <li>Ran a topology optimization of geometry in Ansys to ensure all unnecessary mass was eliminated.</li>
           <li>Conducted Finite Element Analysis (FEA) in Ansys Workbench to identify stress concentrations and yield margins.</li>
-          <li>Selected optimal strain gauge placements based on von Mises stress contours for physical testing validation.</li>
+          <li>Incorperated optimal strain gauges with placements based on von Mises stress contours for physical testing validation.</li>
         </ul>
       </div>
 
@@ -726,8 +728,8 @@
       <div class="modal-block">
         <h3 class="modal-section-title">💡 Project Solutions & Results</h3>
         <ul class="modal-list">
-          <li>Optimized bracket wall thickness, reducing total weight by 15% while exceeding minimum safety factor thresholds.</li>
-          <li>Implemented targeted structural gussets at high-stress mounts to eliminate deflection under dynamic loading.</li>
+          <li>Optimized bracket wall thickness, reducing total weight by _____% while exceeding minimum safety factor thresholds.</li>
+          <li>Maintained efficient on/off serviceability for motor mounting assembly during competitions and testing.</li>
           <li>Validated FEA stress predictions against physical strain gauge telemetry during bench testing.</li>
         </ul>
       </div>
