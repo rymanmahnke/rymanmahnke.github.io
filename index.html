@@ -509,7 +509,7 @@
           <div class="project-info">
             <h3>Differential Mounting Assembly</h3>
             <p>Designed and optimized the sprockets, motor shaft, chain, and chain guard for competition.</p>
-            <div><a href="differential-mount.html" class="link-btn">View Details &rarr;</a></div>
+            <div><button class="link-btn" onclick="openModal('differential-modal')">View Details &rarr;</button></div>
           </div>
         </div>
 
@@ -519,7 +519,7 @@
           <div class="project-info">
             <h3>Motor Mounting Assembly</h3>
             <p>Designed a precision chain tensioning assembly to measure and monitor strain and chain stretch.</p>
-            <div><a href="motor-mount.html" class="link-btn">View Details &rarr;</a></div>
+            <div><button class="link-btn" onclick="openModal('motor-modal')">View Details &rarr;</button></div>
           </div>
         </div>
       </div>
@@ -594,6 +594,45 @@
       <p>© Ryman Mahnke — Engineering Portfolio</p>
       </div>
   </footer>
-    
+    <!-- Motor Mount Modal -->
+<div id="motor-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('motor-modal')">&times;</span>
+    <h2>Motor Mounting Assembly</h2>
+
+    <h3>Project Goals</h3>
+    <ul>
+      <li>Design a structural mount capable of supporting torsional load requirements under acceleration.</li>
+      <li>Minimize overall component weight without compromising structural rigidity.</li>
+      <li>Ensure integration with existing chassis attachment points and drivetrain geometry.</li>
+    </ul>
+
+    <h3>Project Actions</h3>
+    <ul>
+      <li>Modeled 3D geometry in SolidWorks and created parameterized mounting tabs.</li>
+      <li>Conducted Finite Element Analysis (FEA) in Ansys to identify peak stress regions and yield margins.</li>
+      <li>Selected strain gauge locations based on stress contours for physical load testing.</li>
+    </ul>
+
+    <h3>Project Solutions</h3>
+    <ul>
+      <li>Optimized bracket wall thickness, reducing total weight by 15% while maintaining safety factor thresholds.</li>
+      <li>Implemented reinforced gussets at high-stress mounts to eliminate deflection under dynamic loading.</li>
+      <li>Validated FEA predictions against physical strain gauge data during bench testing.</li>
+    </ul>
+
+    <h3>Project Media & CAD Views</h3>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="your-image-1.jpg" alt="SolidWorks CAD View">
+        <div class="caption">SolidWorks assembly CAD model</div>
+      </div>
+      <div class="gallery-item">
+        <img src="your-image-2.jpg" alt="Ansys Stress Analysis">
+        <div class="caption">Ansys FEA stress distribution</div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
